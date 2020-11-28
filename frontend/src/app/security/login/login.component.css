@@ -1,0 +1,81 @@
+* {
+	/* height: 100vh; */
+}
+
+.bg-img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/* opacity: 0.2; */
+	background-image: url("/../../../assets/img/bg-img/background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.login-box {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+.login {
+	position: relative;
+	padding: 25px;
+	width: 400px;
+	min-width: 270px;
+	background: var(--background);
+	z-index: 999;
+	margin: 0 auto;
+	border: 0;
+	box-shadow: none;
+	border-radius: 8px;
+	/* top: 200px; */
+}
+
+input {
+	width: calc(100%);
+	margin: 5px 0;
+	padding: 15px 0;
+	background: var(--backgroundInput) !important;
+	color: var(--backgroundInputColor) !important;
+}
+.btnentrar {
+	width: calc(100%);
+	margin-top: 15px;
+	padding: 10px 0;
+	border: transparent;
+
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	-webkit-text-decoration: none;
+	text-decoration: none;
+}
+.btnNewAccount {
+	width: calc(100%);
+	margin-top: 15px;
+	padding: 10px 0;
+	border: 1px solid var(--backgroundColor);
+	color: var(--backgroundColor);
+
+	font-size: 1.3rem;
+}
+.btnNewAccount:hover {
+	color: var(--background);
+}
+.cardTitle {
+	text-align: center;
+}
+.cardTitle .title {
+	font-size: 2em;
+	color: var(--backgroundColor);
+}
+.cardTitle .subTitle {
+	color: #bababa;
+}

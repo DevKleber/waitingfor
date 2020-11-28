@@ -1,0 +1,138 @@
+/* .navegatorWithMenuLeft div.customersHd{
+
+}
+.navegatorWithMenuLeft div.customersFullHd{
+
+} */
+
+
+@media (width: 640px) {
+}
+@media (width: 800px) {
+}
+@media (width: 960px) {
+}
+@media only screen and (min-width: 1px) and (max-width: 550px) {
+
+	.sellMore header .logo {
+		width: 65px!important;
+	}
+	.sellMore header .profile {
+		width: 65px!important;
+	}
+
+	.searchInput{
+		/* width: 145px!important; */
+		width: auto!important;
+		flex: 1!important;
+	}
+	.customers,.customersFilter {
+		width: 100% !important;
+		margin: 15px 0px!important;
+	}
+	.footerItens{
+		width: 60px!important;
+		height: 60px!important;
+		border-radius: 30px!important;
+		font-size: 2em!important;
+		margin-left: 10px;
+	}
+	.lottieSearch{
+		width: 100%!important;
+	}
+	.mobileNo{
+		display: none!important;
+	}
+	.modal .modal-exlg {
+		width: 95%!important;
+	}
+	.calendarOptions {
+		flex-wrap: wrap!important;
+	}
+
+	.calendarDate,.calendarDateType,.calendarDateChosen{
+		width: 100%!important;
+		align-items: center!important;
+		justify-content: center!important;
+	}
+	#modalCalendar.modal.fade.in div.modal-dialog.modal-exlg div.modal-body div div.card-light  div.row{
+		flex-wrap: wrap!important;
+	}
+	#modalCalendar.modal.fade.in div.modal-dialog.modal-exlg div.modal-body div div.card-light  div.row .input{
+		margin-right: 0px!important;
+	}
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1024px) {
+	.customers,.customersFilter {
+		width: 46.5% !important;
+	}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1152px) {
+	.customers,.customersFilter {
+		width: 47% !important;
+	}
+}
+@media only screen and (min-width: 1153px) and (max-width: 1280px) {
+	.customers,.customersFilter {
+		width: 47.3% !important;
+	}
+}
+/* @media only screen and (min-width: 1281px) and (max-width: 1360px) {
+	.customers {
+		width: 378px !important;
+	}
+	.customersFilter{
+		width: 378px!important;
+	}
+}
+@media only screen and (min-width: 1361px) and (max-width: 1366px) {
+	.customers {
+		width: 392px !important;
+	}
+	.customersFilter{
+		width: 392px!important;
+	}
+} */
+@media only screen and (min-width: 1281px) and (max-width: 1368px) {
+
+	.customers,.customersFilter {
+		width: 30.8% !important;
+	}
+
+	/* .customers {
+		width: 392px !important;
+	}
+	.customersFilter{
+		width: 392px!important;
+	} */
+
+	.children .item .contacto .contacto-name {
+		font-size: 16px!important;
+	}
+	.footerItens{
+		width: 60px!important;
+		height: 60px!important;
+		border-radius: 30px!important;
+		font-size: 2em!important;
+	}
+	.sellMore footer {
+		width: 245px!important;
+	}
+}
+
+
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
+	.customers,.customersFilter {
+		width: 30.8% !important;
+	}
+}
+@media only screen and (min-width: 1601px) and (max-width: 1920px) {
+	.customers {
+		width: 23.3% !important;
+	}
+}
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media only screen and (min-width: 2561px) and (max-width: 3840px) {
+}

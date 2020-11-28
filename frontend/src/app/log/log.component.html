@@ -1,0 +1,198 @@
+<div class="row">
+	<div class="center-center flexAll pad30">
+		<div class="panel-heading">
+			<h1 class="panel-title">
+				Access log
+			</h1>
+			<div class="refresh" (click)="getLogs()" style="position: absolute; right: 15px; top: 15px;">
+				<button class="btn-primary">Atualizar lista</button>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="left card-light">
+				<div class="logs ">
+					<table class="table table-bordered">
+						<perfect-scrollbar>
+							<div class="logsHight">
+								<thead>
+									<tr>
+										<th>Data</th>
+										<th>User</th>
+										<th width="100">Display</th>
+										<th>OS</th>
+										<th>Device</th>
+										<th>Browser</th>
+										<th>Language</th>
+										<th>IP</th>
+										<th>User Agent</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let log of logs">
+										<td>{{log?.created_at | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+										<td>{{log?.nome}}</td>
+										<td>{{log?.display_resolution}}</td>
+										<td>{{log?.os}}</td>
+										<td>{{log?.device}}</td>
+										<td>{{log?.browser}}</td>
+										<td>{{log?.language}}</td>
+										<td>{{log?.ip}}</td>
+										<td>{{log?.user_agent}}</td>
+									</tr>
+								</tbody>
+							</div>
+						</perfect-scrollbar>
+					</table>
+				</div>
+			</div>
+			<div class="right ">
+
+				<div class="cardRight card-light">
+					<h2>Clientes por usuário {{totalCustomerActive.length}}</h2>
+					<perfect-scrollbar>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>User</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalCustomerActive">
+									<td>{{item?.nome}}</td>
+									<td>{{item?.total}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+
+				<div class="cardRight card-light">
+					<h2>Vendas por usuário {{totalCustomerSeller.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>User</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalCustomerSeller">
+									<td>{{item?.nome}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+				<div class="cardRight card-light">
+					<h2>Acessos por usuário {{totalAccessByUser.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>User</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalAccessByUser">
+									<td>{{item?.nome}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+				<div class="cardRight card-light">
+					<h2>Resolução {{totalDisplay.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Resolução</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalDisplay">
+									<td>{{item?.display_resolution}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+				<div class="cardRight card-light">
+					<h2>Navegador {{totalBrowser.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Browser</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalBrowser">
+									<td>{{item?.browser}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+				<div class="cardRight card-light">
+					<h2>Dispositivo {{totalDevice.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Device</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalDevice">
+									<td>{{item?.device}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+				<div class="cardRight card-light">
+					<h2>Idioma {{totalLanguage.length}}</h2>
+						<perfect-scrollbar>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Language</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of totalLanguage">
+									<td>{{item?.language}}</td>
+									<td>{{item?.total}}</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</perfect-scrollbar>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</div>

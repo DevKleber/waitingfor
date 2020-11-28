@@ -1,0 +1,73 @@
+.table-bordered {
+	border: 1px solid #dee2e6;
+}
+.table {
+	width: 100%!important;
+	margin-bottom: 1rem;
+	color: #212529;
+}
+table {
+	border-collapse: collapse;
+}
+.table-bordered thead td,
+.table-bordered thead th {
+	border-bottom-width: 2px;
+}
+thead{
+	width: 100%!important;
+}
+
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #dee2e6;
+	border-bottom-width: 2px;
+}
+.table-bordered td,
+.table-bordered th {
+	border: 1px solid #dee2e6;
+	border-bottom-color: rgb(222, 226, 230);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.table td,
+.table th {
+	padding: 0.75rem;
+	vertical-align: top;
+	border-top: 1px solid #dee2e6;
+}
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+
+/* fim table */
+
+.left{
+	display: flex;
+	flex: 1;
+	margin: 0px 15px 15px 0px;
+}
+.right{
+	display: flex;
+	width: 50%;
+	flex-wrap: wrap;
+}
+
+.logsHight {
+	height: 100vh;
+}
+
+.cardRight{
+	width: 30%;
+	height: auto;
+	margin: 0px 15px 15px 15px;
+	height: 300px;
+	padding-bottom: 40px;
+}
+.totalCustomerActive {
+}
+.totalCustomerSeller {
+	height: 300px;
+	width: 33.33%;
+	margin: 0px 15px 15px 15px;
+}

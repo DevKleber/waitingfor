@@ -1,0 +1,102 @@
+<div class="footerItens" data-toggle="modal" data-target="#modalStickyAdd" matTooltip="Novo lead" style="position: absolute; right: 15px; bottom: 15px;">
+	<i class="fa fa-plus"></i>
+</div>
+
+<!-- <pre>{{ produtos | json }}</pre> -->
+<div class="row flex-wrap">
+	<div class="row card-light width" *ngFor="let item of produtos" style=" margin:15px; position: relative;">
+		<div class="delete">
+			<button (click)="deletar(item)" class="btn-secondary" style="margin-top: 0!important; padding: 7px!important;"> <i class="fa fa-trash-alt"></i></button>
+		</div>
+		<a class="row flex-direction-column" target="_BLANK" href="{{item.link}}">
+			<div class="logo" style="width: 60px; position: absolute;">
+				<img src="/assets/img/empresa/{{item.dominio}}.png" alt=""style="width: 100%;">
+			</div>
+			<div class="row w-100 center-center">
+				<div class="" style="width: 200px;height: 200px;">
+					<img src="{{item.imagem}}" alt="" style="width: 100%; max-height: 100%;">
+				</div>
+			</div>
+			<div class="contentProdut center-center">
+				<h3>{{item.titulo}}</h3>
+
+				<h2 style="text-align: center; margin-top: 15px;">
+					de {{item.valorSalvo | currency : 'R$' }} por {{item.valor | currency : 'R$' }}
+				</h2>
+			</div>
+		</a>
+	</div>
+</div>
+
+<!-- Modal cadastre indicados -->
+<div class="modal fade" id="modalStickyAdd" tabindex="-1" aria-labelledby="modalNewSticky" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="modalNewSticky">
+					<p> Cadastre abaixo os indicados do(a) </p>
+				</h3>
+			</div>
+			<div class="modal-body" style="overflow: auto; max-height: 75vh;">
+
+				<div class="content">
+					<form [formGroup]="form" novalidate>
+						<div class="input">
+							<div class="inputIcon">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="inputText">
+								<input type="text" class="w-100" formControlName="link" placeholder="link" />
+							</div>
+						</div>
+						<div class="input">
+							<div class="inputIcon">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="inputText">
+								<input type="text" class="w-100" formControlName="vl_produto" mask="separator.2"
+								[thousandSeparator]="'.'"
+								[decimalMarker]="','"
+
+									placeholder="Valor atual do produto" />
+							</div>
+						</div>
+						<app-input-container errorMessage='Campo obrigatório' label='Receber e-mail quando o produto ficar mais barato'>
+							<div class="onoffswitch">
+								<input type="checkbox" formControlName="bo_email_desconto" class="onoffswitch-checkbox"
+									id="myonoffswitch" >
+								<label class="onoffswitch-label" for="myonoffswitch"></label>
+							</div>
+						</app-input-container>
+
+						<div class="input" *ngIf="form.value.bo_email_desconto">
+							<div class="inputIcon">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="inputText">
+								<input type="text" class="w-100" formControlName="vl_informardesconto_apartir"mask="separator.2"
+								[thousandSeparator]="'.'"
+								[decimalMarker]="','"
+
+									placeholder="Receber e-mail quando o valor chegar em R$ xx,xx" />
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>
+					Fechar
+				</button>
+				<button type="button" class="btn btn-primary" (click)="save(form.value)" [disabled]="!form.valid">
+					Salvar
+				</button>
+
+			</div>
+
+		</div>
+	</div>
+</div>

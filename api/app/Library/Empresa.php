@@ -6,6 +6,9 @@ class Empresa
 {
     public static function get($req)
     {
+        // $class = ucfirst($req['dominio']);
+        // return call_user_func_array([$class, $methodName], $req);
+
         switch ($req['dominio']) {
             case 'kabum':
                 return Kabum::get($req);
@@ -25,6 +28,10 @@ class Empresa
                 break;
             case 'centralar':
                 return Centralar::get($req);
+
+                break;
+            case 'aliexpress':
+                return Aliexpress::get($req);
 
                 break;
             default:

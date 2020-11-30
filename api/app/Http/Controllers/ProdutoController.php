@@ -24,7 +24,19 @@ class ProdutoController extends Controller
             $ar[$key]['id'] = $value->id;
         }
 
-        return response(['dados' => $ar]);
+        return response(['dados' => $ar, 'empresas' => $this->getEmpresas()]);
+    }
+
+    public function getEmpresas()
+    {
+        return [
+            'kabum.png',
+            'magazineluiza.png',
+            'amazon.png',
+            'sony.png',
+            'centralar.png',
+            'aliexpress.png',
+        ];
     }
 
     public function isOnSale()

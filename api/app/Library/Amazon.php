@@ -11,7 +11,7 @@ class Amazon
         $response = Http::get($req['link']);
         $body = $response->body();
 
-        $body = trim(preg_replace('/\s\s+/', ' ', $body));
+        // $body = trim(preg_replace('/\s\s+/', ' ', $body));
 
         //pegando o titulo
         preg_match('/id=\"productTitle.*<\//', $body, $t);

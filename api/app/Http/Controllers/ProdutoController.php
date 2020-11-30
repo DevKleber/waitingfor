@@ -27,6 +27,39 @@ class ProdutoController extends Controller
         return response(['dados' => $ar]);
     }
 
+    public function isOnSale()
+    {
+        $produto = \App\Produto::join('usuario', 'usuario.id', '=', 'produto.id_user')
+            ->where('bo_email_desconto', true)
+            ->where('vl_informardesconto_apartir', '>', 0)
+            ->get()
+        ;
+        if (!$produto) {
+            return response(['response' => 'Não existe Produto'], 400);
+        }
+
+        foreach ($produto as $key => $value) {
+            $dataEmail['nome'] = $value->nome;
+            $dataEmail['email'] = $value->email;
+            $dataEmail['link'] = $value->link;
+            $dataEmail['dominio'] = $value->dominio;
+            $dataEmail['vl_produto'] = $value->vl_produto;
+            $dataEmail['vl_informardesconto_apartir'] = $value->vl_informardesconto_apartir;
+
+            $webCrawler = Empresa::get($value);
+            $dataEmail['titulo'] = $webCrawler['titulo'];
+            $dataEmail['valor'] = $webCrawler['valor'];
+            $dataEmail['imagem'] = $webCrawler['imagem'];
+
+            if ($value->vl_informardesconto_apartir >= $webCrawler['valor']) {
+                \App\Email::isOnSale($dataEmail);
+                $produtoItem = \App\Produto::find($value->id);
+                $produtoItem->vl_informardesconto_apartir = ($value->vl_informardesconto_apartir - 1);
+                $produtoItem->update();
+            }
+        }
+    }
+
     public function store(Request $request)
     {
         $request['bo_ativo'] = true;

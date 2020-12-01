@@ -1,0 +1,75 @@
+.modal .modal-exlg {
+	width: 90%;
+}
+
+.modal-header {
+	border-bottom: none !important;
+}
+.modal-footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	padding: 0.75rem;
+	border-top: none !important;
+	border-bottom-right-radius: calc(0.3rem - 1px);
+	border-bottom-left-radius: calc(0.3rem - 1px);
+}
+.mat-menu-content button {
+	margin-top: 0 !important;
+}
+.mat-menu-content button a {
+	background: transparent;
+	color: rgba(0, 0, 0, 0.87);
+}
+.mat-menu-content button a:link {
+	text-decoration: none;
+}
+.mat-menu-item:hover,
+.mat-menu-content button a:hover {
+	color: var(--backgroundColor);
+}
+
+/* calendar */
+.cal-month-view .cal-open-day-events {
+    color:var(--backgroundSecondary);
+    background-color:  var(--primary);
+	box-shadow: none!important;
+	font-weight: 500;
+    /* box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.5); */
+}
+mwl-calendar-event-actions.ng-tns-c119-3 span.cal-event-actions.ng-star-inserted a{
+	color: #fff!important;
+}
+/* end calendar */
+
+/* ng select */
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    height: 100%!important;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-input > input {
+	background: none transparent !important;
+	padding: 0 !important;
+}
+.ng-select .ng-select-container  {
+    /* display: flex!important; */
+	background: var(--backgroundInput) !important;
+	color: var(--backgroundInputColor) !important;
+	border: none !important;
+	min-height: 100%!important;
+    /* cursor: default!important; */
+    /* outline: none!important; */
+    overflow: unset!important;
+    /* width: 100%!important; */
+    /* justify-content: center!important; */
+    /* align-items: center!important; */
+    /* align-content: center!important; */
+}
+
+/* end ng select */

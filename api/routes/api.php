@@ -22,4 +22,3 @@ Route::group(['middleware' => 'apiJwt'], function () {
     Route::resource('access_log', 'LogController');
     Route::resource('produto', 'ProdutoController');
 });
-Route::resource('produto', 'ProdutoController');

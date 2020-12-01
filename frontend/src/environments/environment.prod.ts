@@ -1,8 +1,7 @@
 export const environment = {
 	production: true,
-
-	api: 'https://apisellmore.siagesc.com.br/api',
-	apiPublic: 'https://apisellmore.siagesc.com.br/public',
-	apiDominio: 'https://apisellmore.siagesc.com.br',
-	apiSite: 'https://apisellmore.siagesc.com.br',
+	api: 'https://waitingfor.api.arocweb.com.br/api',
+	apiPublic: 'https://waitingfor.api.arocweb.com.br/public',
+	apiDominio: 'https://waitingfor.api.arocweb.com.br',
+	apiSite: 'https://waitingfor.api.arocweb.com.br',
 };

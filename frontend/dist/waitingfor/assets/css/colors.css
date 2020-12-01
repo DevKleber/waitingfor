@@ -1,0 +1,37 @@
+:root {
+	--backgroundColorLight:#fff;
+	--background: #ecebeb;
+	/* --background: #efefed; */
+	--backgroundColor: #606060;
+	--backgroundColorMoreDark: #5b6d80;
+
+	--colorPrimary: #1a0f46;
+
+	--backgroundButton: #055eb2;
+	--backgroundButtonHover: #034079;
+	--backgroundButtonDisabled: #034079;
+	--backgroundButtonDisabledColor: #8e8c94;
+	--backgroundButtonColor: #fff;
+
+	--primary: #055eb2;
+
+	--icons: #6c7883;
+
+	/* --backgroundComponents: #182533; */
+	--backgroundComponents: #055eb2;
+	--backgroundComponentsColor: #cbd7e1;
+
+	--backgroundInput: #dfe1e5;
+	--backgroundInputColor: #1a0f46;
+
+	--backgroundButtonSecondary: #b3b3b3;
+	--backgroundButtonColorSecondary: #fff;
+
+	--backgroundSecondary: #0f89ff;
+	--backgroundSecondaryHover: #0b76e0;
+	--backgroundSecondaryColor: #fff;
+
+	--card-lightBackground: #fff;
+	--card-lightColor: #636363;
+
+}

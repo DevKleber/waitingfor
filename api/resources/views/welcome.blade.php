@@ -72,7 +72,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                <img src="public/img/logo/pecus.png" alt="" srcset="">
+                Waiting for
             </div>
 
             <!-- <div class="links">

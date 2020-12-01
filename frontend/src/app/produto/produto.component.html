@@ -1,4 +1,4 @@
-<div class="footerItens" data-toggle="modal" data-target="#modalStickyAdd" matTooltip="Novo lead" style="position: absolute; right: 15px; bottom: 15px;">
+<div class="footerItens" data-toggle="modal" data-target="#modalStickyAdd" matTooltip="Novo produto" style="position: absolute; right: 15px; bottom: 15px;">
 	<i class="fa fa-plus"></i>
 </div>
 
@@ -22,6 +22,9 @@
 
 				<h2 style="text-align: center; margin-top: 15px;">
 					de {{item.valorSalvo | currency : 'R$' }} por {{item.valor | currency : 'R$' }}
+
+					<i style="color: #428266;" *ngIf="item.valor < item.valorSalvo" class="fa fa-thumbs-up"></i>
+					<i style="color: #ff8888;" *ngIf="item.valor > item.valorSalvo" class="fa fa-thumbs-down"></i>
 				</h2>
 			</div>
 		</a>
@@ -34,7 +37,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h3 class="modal-title" id="modalNewSticky">
-					<p> Cadastre abaixo os indicados do(a) </p>
+					<p> Novo produto </p>
 				</h3>
 			</div>
 			<div class="modal-body" style="overflow: auto; max-height: 75vh;">

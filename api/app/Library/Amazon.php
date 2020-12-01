@@ -10,16 +10,31 @@ class Amazon
     {
         $response = Http::get($req['link']);
         $body = $response->body();
+        $contentBody = trim(preg_replace('/\s\s+/', ' ', $body));
 
-        // $body = trim(preg_replace('/\s\s+/', ' ', $body));
+        $title = self::getTitle($contentBody, $body, $req);
+        $price = self::getPrice($body);
+        $image = self::getImage($body);
 
-        //pegando o titulo
-        preg_match('/id=\"productTitle.*<\//', $body, $t);
+        return self::proccess($title, $price, $image);
+    }
+
+    private static function getTitle($contentBody, $body, $req = null)
+    {
+        preg_match('/id=\"productTitle.*<\//', $contentBody, $t);
+        if (count($t) <= 0) {
+            preg_match('/id=\"productTitle.*<\//', $body, $t);
+            if (count($t) <= 0) {
+                preg_match('/("productTitle"(.*?)<)/', $contentBody, $t);
+            }
+        }
         $title = strip_tags($t[0] ?? null);
-        $title = explode('>', $title)[1] ?? null;
 
-        //Pegando o preço
+        return explode('>', $title)[1] ?? null;
+    }
 
+    private static function getPrice($body)
+    {
         preg_match('/id=\"priceblock_ourprice".*<\/span/', $body, $price);
         $preco = strip_tags($price[0] ?? null);
         $preco = explode('R$', $preco)[1] ?? null;
@@ -32,21 +47,29 @@ class Amazon
             $preco = explode('R$', $preco)[1] ?? null;
         }
 
-        // preg_match('/variationPath.*,/', $body, $img);
-        //
-        // preg_match('/https?:\/\/[^\/\s]+\/\S+\.(jpg|png)/', $body, $img);
+        return $preco;
+    }
+
+    private static function getImage($body)
+    {
         preg_match('/id=\"landingImage".*.(jpg|png)/', $body, $img);
         $imagem = strip_tags($img[0] ?? null);
-        $expImagem = explode('&quot;', $imagem)[1] ?? null;
 
-        $precoPrudoto = str_replace(['",', "'", '"', ' ', '+'], '', $preco);
-        $formatoPrecoPrudoto = str_replace('.', '', $precoPrudoto);
-        $formatoPrecoPrudoto = str_replace(',', '.', $formatoPrecoPrudoto);
+        return explode('&quot;', $imagem)[1] ?? null;
+    }
+
+    private static function proccess($title, $price, $image)
+    {
+        $price = str_replace(['",', "'", '"', ' ', '+'], '', $price);
+        $price = str_replace('.', '', $price);
+        $price = str_replace(',', '.', $price);
+        $title = str_replace(["'", '"'], '', $title);
+        $image = str_replace(["'", '"'], '', $image ?? null);
 
         return [
-            'titulo' => str_replace(["'", '"'], '', $title),
-            'valor' => $formatoPrecoPrudoto,
-            'imagem' => str_replace(["'", '"'], '', $expImagem ?? null),
+            'titulo' => $title ?? null,
+            'valor' => $price ?? null,
+            'imagem' => $image ?? null,
         ];
     }
 }

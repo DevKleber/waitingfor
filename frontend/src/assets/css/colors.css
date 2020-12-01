@@ -5,39 +5,33 @@
 	--backgroundColor: #606060;
 	--backgroundColorMoreDark: #5b6d80;
 
-	--colorPrimary: #2a004f;
+	--colorPrimary: #1a0f46;
 
-	--backgroundButton: #2a004f;
-	--backgroundButtonHover: #1a0030;
-	--backgroundButtonDisabled: #1c0035;
+	--backgroundButton: #055eb2;
+	--backgroundButtonHover: #034079;
+	--backgroundButtonDisabled: #034079;
 	--backgroundButtonDisabledColor: #8e8c94;
 	--backgroundButtonColor: #fff;
 
-	--primary: #2a004f;
+	--primary: #055eb2;
 
 	--icons: #6c7883;
 
 	/* --backgroundComponents: #182533; */
-	--backgroundComponents: #2a004f;
+	--backgroundComponents: #055eb2;
 	--backgroundComponentsColor: #cbd7e1;
 
 	--backgroundInput: #dfe1e5;
-	--backgroundInputColor: #2a004f;
+	--backgroundInputColor: #1a0f46;
 
 	--backgroundButtonSecondary: #b3b3b3;
 	--backgroundButtonColorSecondary: #fff;
 
-	--backgroundSecondary: #00eb84;
-	--backgroundSecondaryHover: #00c972;
+	--backgroundSecondary: #0f89ff;
+	--backgroundSecondaryHover: #0b76e0;
 	--backgroundSecondaryColor: #fff;
 
 	--card-lightBackground: #fff;
 	--card-lightColor: #636363;
 
-	/* --backgroundButton: #04d361;
-    --backgroundButtonHover: #0df576;
-    --backgroundButtonDisabled: #95fcc1;
-    --backgroundButtonDisabledColor: #212025;
-    --backgroundButtonColor: #fff;
-	--primary: #04d361; */
 }

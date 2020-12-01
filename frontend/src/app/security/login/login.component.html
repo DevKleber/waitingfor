@@ -2,14 +2,14 @@
 	<div class="login">
 		<ng-container *ngIf="!isNewAccount; else elseTemplateNewAccount">
 			<div class="cardTitle">
-				<div class="title">Wi<span style="text-decoration: underline;">se</span>ller</div>
+				<div class="title">Waiting for</div>
 				<div class="subTitle">Login</div>
 			</div>
 		</ng-container>
 		<ng-template #elseTemplateNewAccount>
 			<div class="cardTitle">
 				<div class="title">
-					<p>wi<span style="text-decoration: underline;">se</span>ller</p>
+					<p>Waiting for</p>
 				</div>
 				<div class="subTitle">Create account</div>
 			</div>
@@ -45,7 +45,7 @@
 				Entrar
 			</button>
 			<hr />
-			<h3>Novo no Wi<span style="text-decoration: underline;">se</span>ller?</h3>
+			<h3>Novo no Waiting for?</h3>
 			<button
 				(click)="changeToNewAccount()"
 				class="btn btn-secondary btn-block btnNewAccount"

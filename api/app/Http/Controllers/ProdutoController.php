@@ -62,12 +62,13 @@ class ProdutoController extends Controller
             $dataEmail['titulo'] = $webCrawler['titulo'];
             $dataEmail['valor'] = $webCrawler['valor'];
             $dataEmail['imagem'] = $webCrawler['imagem'];
-
-            if ($value->vl_informardesconto_apartir >= $webCrawler['valor']) {
-                \App\Email::isOnSale($dataEmail);
-                $produtoItem = \App\Produto::find($value->id);
-                $produtoItem->vl_informardesconto_apartir = ($value->vl_informardesconto_apartir - 1);
-                $produtoItem->update();
+            if ($webCrawler['valor'] > 0) {
+                if ($value->vl_informardesconto_apartir >= $webCrawler['valor']) {
+                    \App\Email::isOnSale($dataEmail);
+                    $produtoItem = \App\Produto::find($value->id);
+                    $produtoItem->vl_informardesconto_apartir = ($value->vl_informardesconto_apartir - 1);
+                    $produtoItem->update();
+                }
             }
         }
     }

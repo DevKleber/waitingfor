@@ -51,23 +51,26 @@ class ProdutoController extends Controller
         }
 
         foreach ($produto as $key => $value) {
-            $dataEmail['nome'] = $value->nome;
-            $dataEmail['email'] = $value->email;
-            $dataEmail['link'] = $value->link;
-            $dataEmail['dominio'] = $value->dominio;
-            $dataEmail['vl_produto'] = $value->vl_produto;
-            $dataEmail['vl_informardesconto_apartir'] = $value->vl_informardesconto_apartir;
-
             $webCrawler = Empresa::get($value);
-            $dataEmail['titulo'] = $webCrawler['titulo'];
-            $dataEmail['valor'] = $webCrawler['valor'];
-            $dataEmail['imagem'] = $webCrawler['imagem'];
+
             if ($webCrawler['valor'] > 0) {
-                if ($value->vl_informardesconto_apartir >= $webCrawler['valor']) {
+                $dataEmail['valor'] = floatval($webCrawler['valor']);
+                if ($value->vl_informardesconto_apartir >= $dataEmail['valor']) {
+                    $dataEmail['nome'] = $value->nome;
+                    $dataEmail['email'] = $value->email;
+                    $dataEmail['link'] = $value->link;
+                    $dataEmail['dominio'] = $value->dominio;
+                    $dataEmail['vl_produto'] = floatval($value->vl_produto);
+                    $dataEmail['vl_informardesconto_apartir'] = $value->vl_informardesconto_apartir;
+                    $dataEmail['titulo'] = $webCrawler['titulo'];
+                    $dataEmail['imagem'] = $webCrawler['imagem'];
+
                     \App\Email::isOnSale($dataEmail);
                     $produtoItem = \App\Produto::find($value->id);
-                    $produtoItem->vl_informardesconto_apartir = ($value->vl_informardesconto_apartir - 1);
+                    $produtoItem->vl_informardesconto_apartir = $dataEmail['valor'] - 1;
                     $produtoItem->update();
+
+                    // return [$produtoItem, $dataEmail];
                 }
             }
         }

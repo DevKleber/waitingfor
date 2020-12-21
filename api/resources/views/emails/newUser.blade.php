@@ -11,7 +11,7 @@
         <tr>
             <td colspan="2" style="padding:20px;color:#666666">
                 <h2 style="color:#333333">Olá, {{$user['no_pessoa']}}</h2>
-                <p>Segue dados de acesso ao sistema pecus</p>
+                <p>Segue dados de acesso ao sistema Waiting for</p>
                 <p>
                 <h3>
                     Seu login: {{$user['login']}}<br />
@@ -25,12 +25,12 @@
             <td colspan="2" style="color:#666;font-size:14px;line-height:20px;padding:16px 16px 0">
                 Acesse o
                 <a href="#" style="color:#000;text-decoration:underline" target="_blank">
-                    PECUS
+                    Waiting for
                 </a>
             </td>
         </tr>
         <tr>
-            <td colspan="2" style="font-size:14px;padding:8px 16px 16px" align="left"> <a href="pecus.com.br"
+            <td colspan="2" style="font-size:14px;padding:8px 16px 16px" align="left"> <a href="https://waitingfor.arocweb.com.br/"
                     style="color:#000;text-decoration:none" target="_blank">
                 </a> </td>
         </tr>

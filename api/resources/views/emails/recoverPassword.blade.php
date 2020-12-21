@@ -29,8 +29,8 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" style="font-size:14px;padding:8px 16px 16px" align="left"> <a href="pecus.com.br"
-                    style="color:#000;text-decoration:none" target="_blank">
+            <td colspan="2" style="font-size:14px;padding:8px 16px 16px" align="left"> <a
+                    href="https://waitingfor.arocweb.com.br/" style="color:#000;text-decoration:none" target="_blank">
                 </a> </td>
         </tr>
     </tbody>

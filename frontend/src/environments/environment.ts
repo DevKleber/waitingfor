@@ -5,8 +5,8 @@
 export const environment = {
 	production: false,
 	// api: "http://apicampanha.siagesc.com.br/api"
-	api: 'https://waitingfor.api.arocweb.com.br/api',
-	// api: 'http://127.0.0.1:8000/api',
+	// api: 'https://waitingfor.api.arocweb.com.br/api',
+	api: 'http://127.0.0.1:8000/api',
 	apiPublic: 'http://127.0.0.1:8000/public',
 	apiDominio: 'http://127.0.0.1:8000',
 	apiSite: 'http://127.0.0.1:8000',

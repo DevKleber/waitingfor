@@ -9,6 +9,12 @@ const Handler = {
 	kabum: require("../sites/kabum.js"),
 	magazineluiza: require("../sites/magazineluiza.js"),
 	aliexpress: require("../sites/aliexpress.js"),
+	shopee: require("../sites/shopee.js"),
+	mercadolivre: require("../sites/mercadolivre.js"),
+	americanas: require("../sites/americanas.js"),
+	casasbahia: require("../sites/casasbahia.js"),
+	submarino: require("../sites/submarino.js"),
+	lenovo: require("../sites/lenovo.js"),
 };
 
 

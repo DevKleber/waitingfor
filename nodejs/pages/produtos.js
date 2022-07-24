@@ -17,7 +17,7 @@ async function getProdutos(request, response) {
 	
 	const driver = new Builder()
 		.forBrowser("firefox")
-		.setFirefoxOptions(new firefox.Options().headless())
+		// .setFirefoxOptions(new firefox.Options().headless())
 		.build();
 	try {
 		await database.sync();

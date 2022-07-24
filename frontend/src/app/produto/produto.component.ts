@@ -57,8 +57,10 @@ export class ProdutoComponent implements OnInit {
 
 	getProdutos() {
 		this.produtoService.getProdutos().subscribe((Produto) => {
+			console.log(Produto);
+
 			this.produtos = Produto['dados'];
-			this.empresas = Produto['empresas'];
+			// this.empresas = Produto['empresas'];
 			this.loaderService.isLoad(false);
 			this.loader = false;
 		});

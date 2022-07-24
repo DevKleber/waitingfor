@@ -20,7 +20,7 @@ export class ProdutoComponent implements OnInit {
 	loader: boolean = true;
 	form: FormGroup;
 
-	timeToReLoadSeconds: number = 120;
+	timeToReLoadSeconds: number = 1800;
 	columns: any;
 
 	@ViewChild('closeModal', { static: true }) closeModal: ElementRef;

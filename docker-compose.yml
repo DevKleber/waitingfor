@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api:
+    build: ./nodejs
+    networks:
+      - backend-waitfor
+      - frontend-waitfor
+    ports:
+      - 3331:80
+  frontend:
+    depends_on:
+      - waitfor-api
+    build: ./frontend
+    ports:
+      - 4200:80
+    networks:
+      - frontend-waitfor  
+networks:
+  backend-waitfor:
+  frontend-waitfor:

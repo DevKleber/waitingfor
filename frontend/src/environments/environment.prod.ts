@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	api: 'http://localhost:3331',
-	apiPublic: 'http://localhost:3331',
-	apiDominio: 'http://localhost:3331',
-	apiSite: 'http://localhost:3331',
+	api: 'http://192.168.0.110:4443',
+	apiPublic: 'http://192.168.0.110:4443',
+	apiDominio: 'http://192.168.0.110:4443',
+	apiSite: 'http://192.168.0.110:4443',
 };

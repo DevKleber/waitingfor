@@ -1,7 +1,11 @@
 const database = require("../db");
 
-const firefox = require("selenium-webdriver/firefox");
-const { Builder } = require("selenium-webdriver");
+const { Builder, Capabilities } = require("selenium-webdriver");
+var capabilities = Capabilities.firefox();
+
+
+const chrome = require("selenium-webdriver/chrome");
+// const { Builder } = require("selenium-webdriver");
 const { All } = require("../model/Produto/Read.js");
 const Handler = {
 	amazon: require("../sites/amazon.js"),
@@ -20,20 +24,26 @@ const Handler = {
 
 async function getProdutos(request, response) {
 	const products = [];
-	const optionsFirefox = new firefox.Options();
-	optionsFirefox.setBinary("/opt/firefox/firefox");
+	// const optionsBrowser = new chrome.Options();
+	// optionsBrowser.setBinary("/opt/firefox/firefox");
+	// remote driver conection
 	
+	
+	// const driver = new Builder()
+	// 	.forBrowser("chrome")
+	// 	.setFirefoxOptions(
+	// 		optionsBrowser.headless()
+	// 	)
+	// 	.build();
+
 	const driver = new Builder()
-		.forBrowser("firefox")
-		.setFirefoxOptions(
-			optionsFirefox.headless()
-        
-		)
-		.build();
+        .usingServer("http://selenium:4444/wd/hub")   
+        .withCapabilities(capabilities)
+        .build();
 	try {
 		await database.sync();
 		const produtos = await All();
-		console.log(produtos);
+		// console.log(produtos);
 		for (let i = 0; i < produtos.length; i++) {
 			const produto = await Handler[produtos[i].dominio].run(
 				driver,
@@ -52,7 +62,7 @@ async function getProdutos(request, response) {
 		response.json({ return: "Erro ao obter produtos" });
 		return err;
 	} finally {
-		console.error(err);
+		// console.error(err);
 		console.log("fechando driver");
 		await driver.quit();
 	}

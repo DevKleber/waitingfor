@@ -1,8 +1,15 @@
 version: '3.8'
 services:
+  selenium:
+    image: selenium/standalone-firefox
+    ports:
+      - "4444:4444"
   api:
     build: .
+    container_name: waitingfor_api
     ports:
-      - 3331:3331
+      - 4443:4443
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/app	
+    depends_on:
+      - selenium

@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	api: 'https://waitingfor_api.ipeweb.tech',
-	apiPublic: 'https://waitingfor_api.ipeweb.tech',
-	apiDominio: 'https://waitingfor_api.ipeweb.tech',
-	apiSite: 'https://waitingfor_api.ipeweb.tech',
+	api: 'https://waitingfor-api.ipeweb.tech',
+	apiPublic: 'https://waitingfor-api.ipeweb.tech',
+	apiDominio: 'https://waitingfor-api.ipeweb.tech',
+	apiSite: 'https://waitingfor-api.ipeweb.tech',
 };

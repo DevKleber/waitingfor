@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	api: 'http://45.177.254.209:4443',
-	apiPublic: 'http://45.177.254.209:4443',
-	apiDominio: 'http://45.177.254.209:4443',
-	apiSite: 'http://45.177.254.209:4443',
+	api: 'https://waitingfor_api.ipeweb.tech',
+	apiPublic: 'https://waitingfor_api.ipeweb.tech',
+	apiDominio: 'https://waitingfor_api.ipeweb.tech',
+	apiSite: 'https://waitingfor_api.ipeweb.tech',
 };

@@ -6,4 +6,4 @@ services:
     ports:
       - 4200:80
     volumes:
-      - ./dist/waitingfor:/usr/share/nginx/html
+      - ./dist/waitingfor:/dist/src/app

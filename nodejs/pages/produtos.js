@@ -20,14 +20,20 @@ const Handler = {
 
 async function getProdutos(request, response) {
 	const products = [];
+	const optionsFirefox = new firefox.Options();
+	optionsFirefox.setBinary("/opt/firefox/firefox");
 	
 	const driver = new Builder()
 		.forBrowser("firefox")
-		.setFirefoxOptions(new firefox.Options().headless())
+		.setFirefoxOptions(
+			optionsFirefox.headless()
+        
+		)
 		.build();
 	try {
 		await database.sync();
 		const produtos = await All();
+		console.log(produtos);
 		for (let i = 0; i < produtos.length; i++) {
 			const produto = await Handler[produtos[i].dominio].run(
 				driver,
@@ -43,9 +49,10 @@ async function getProdutos(request, response) {
 	} catch (err) {
 		console.error(err);
 		response.status(400);
-		response.json({ return: "Erro ao emitir dare" });
+		response.json({ return: "Erro ao obter produtos" });
 		return err;
 	} finally {
+		console.error(err);
 		console.log("fechando driver");
 		await driver.quit();
 	}

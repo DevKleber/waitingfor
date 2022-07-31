@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	api: 'https://waitingfor.api.arocweb.com.br/api',
-	apiPublic: 'https://waitingfor.api.arocweb.com.br/public',
-	apiDominio: 'https://waitingfor.api.arocweb.com.br',
-	apiSite: 'https://waitingfor.api.arocweb.com.br',
+	api: 'http://localhost:3331',
+	apiPublic: 'http://localhost:3331',
+	apiDominio: 'http://localhost:3331',
+	apiSite: 'http://localhost:3331',
 };

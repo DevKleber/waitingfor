@@ -21,6 +21,6 @@ WORKDIR /usr/src/app
 
 RUN npm install --location=global npm@8.15.1
 
-CMD "npm" "install" ; npm run dev
-# # node index.js
-EXPOSE 3331
+CMD "npm" "install" ; node index.js
+
+EXPOSE 4443

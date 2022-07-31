@@ -3,7 +3,7 @@ const express = require("express");
 const { routes } = require("./routes");
 const cors = require("cors");
 
-const port = 3331;
+const port = 4443;
 const app = express();
 
 app.use(express.json());

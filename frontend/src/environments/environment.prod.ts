@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	api: 'http://192.168.0.110:4443',
-	apiPublic: 'http://192.168.0.110:4443',
-	apiDominio: 'http://192.168.0.110:4443',
-	apiSite: 'http://192.168.0.110:4443',
+	api: 'http://45.177.254.209:4443',
+	apiPublic: 'http://45.177.254.209:4443',
+	apiDominio: 'http://45.177.254.209:4443',
+	apiSite: 'http://45.177.254.209:4443',
 };

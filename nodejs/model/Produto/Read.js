@@ -1,13 +1,21 @@
 const database = require("../../db");
+const jwt = require("jsonwebtoken");
 const Produto = require("../../entity/produto");
 const User = require("../../entity/user");
 
-async function All() {
+async function All(token = null) {
 	try {
+		let userToken = { id: null };
+
+		if (token) {
+			userToken = jwt.decode(token);
+		}
+
 		await database.sync();
 		const produtos = await Produto.findAll({
 			where: {
 				bo_ativo: true,
+				id_user: userToken.id,
 			},
 			raw: true,
 		});

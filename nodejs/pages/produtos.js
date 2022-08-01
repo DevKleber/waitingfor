@@ -4,7 +4,7 @@ const { Builder, Capabilities } = require("selenium-webdriver");
 var capabilities = Capabilities.firefox();
 
 
-const chrome = require("selenium-webdriver/chrome");
+// const chrome = require("selenium-webdriver/chrome");
 // const { Builder } = require("selenium-webdriver");
 const { All } = require("../model/Produto/Read.js");
 const Handler = {
@@ -41,8 +41,9 @@ async function getProdutos(request, response) {
         .withCapabilities(capabilities)
         .build();
 	try {
+		const token = request.headers.authorization.split(" ")[1] ?? "";
 		await database.sync();
-		const produtos = await All();
+		const produtos = await All(token);
 		// console.log(produtos);
 		for (let i = 0; i < produtos.length; i++) {
 			const produto = await Handler[produtos[i].dominio].run(

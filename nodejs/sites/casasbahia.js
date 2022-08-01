@@ -7,7 +7,6 @@ async function run(driver, url) {
 		let imagem = '';
 		let titulo = '';
 		await sleep(2000);
-		console.log("Buscando elementos na pagina");
 
 		try {
 			imagem = await driver.findElement(By.xpath(`//*[@id="gallery"]/div[2]/div/div[1]/img`)).getAttribute("src");

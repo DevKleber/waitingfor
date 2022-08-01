@@ -29,7 +29,7 @@ const login = async function (req, res) {
 
 	const token = jwt.sign({ id: user.id }, "myscsd12sfsecret");
 	return res.json({
-		token,
+		access_token: token,
 		me: {
 			id: user.id,
 			nome: user.nome,

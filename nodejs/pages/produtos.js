@@ -19,6 +19,7 @@ const Handler = {
 	casasbahia: require("../sites/casasbahia.js"),
 	submarino: require("../sites/submarino.js"),
 	lenovo: require("../sites/lenovo.js"),
+	brastemp: require("../sites/brastemp.js"),
 };
 
 
